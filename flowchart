@@ -1,0 +1,19 @@
+graph TD
+    A[Start: WPARR released to WRMO] --> B(WRMO reviews WPARR);
+    B --> C(WRMO distributes WPARR to WRMMs for review. WRMMs review/annotate changes);
+    C --> D(WRMO schedules meeting w/WRMMs/EAE to discuss WPARR changes. WRMMs bring DPAS PA (CIR), ILS-S/ICP due-out reports);
+    D --> E(Establish timeline for equipment inventory & accountable record update completion);
+    E --> F(WRMMs review WPARR vs DPAS PA/ICP and ILS-S products to identify changes);
+    F --> G{Are there shortages?};
+    G -- Yes --> H{Is it Budget code 9?};
+    H -- Yes --> I[Order in ILS-S];
+    H -- No --> J[Order in ICP];
+    G -- No --> K(Are there overages?);
+    I --> K;
+    J --> K;
+    K -- Yes --> L[Identify Excess and Put Assets on Excess Details];
+    K -- No --> M(Obtain New DPAS/ILS-S reports and compare to updated WPARR);
+    L --> M;
+    M --> N{Reports Match?};
+    N -- Yes --> O[End: All reports match; submit to A4R];
+    N -- No --> F;
